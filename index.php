@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php
+$dataFile = 'data.json';
+
+// Leggo il file
+$list_string = file_get_contents("data.json"); //string
+
+// Trasformo la stringa in un array
+$list = json_decode($list_string, true);
+var_dump($list);
+
+?>
