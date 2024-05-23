@@ -11,6 +11,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
         crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./css/style.css">
 
     <!-- Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -21,11 +22,22 @@
 <body>
     
     <div id="app">
-        <div class="container">
-            <div class="row row-cols-1">
-                <div class="col">
-                    <div class="card" v-for="disk in disks">
-                        <img src="{{ disk.poster }}" alt="">
+        <div class="container py-5">
+            <div class="row row-cols-3">
+                <div class="col" v-for="disk in disks">
+                    <div class="card" >
+                        <img class="card-image-top" :src="disk.poster" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="text-center">
+                            {{disk.title}}
+                        </h4>
+                        <div class="text-center mt-2">
+                            {{ disk.author }}
+                        </div>
+                        <h4 class="text-center">
+                            {{ disk.year }}
+                        </h4>
                     </div>
                 </div>
             </div>
